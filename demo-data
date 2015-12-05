@@ -1,0 +1,20 @@
+#!/bin/sh
+# Dependencies:
+#  [httpie](http://httpie.org/)
+
+if [ $DONT_RUN_NOTIFY ]
+then
+    exit
+fi
+
+# Create the channels
+http post $HUB/channel/register name=Monstercat slug=monstercat url=$CHANNEL/monstercat password=sten123 hosted-by=edmDistrict
+http post $HUB/channel/register name="Clarkson, Hammond & May Live" slug=clarkson-hammond-may-live url=$CHANNEL/clarkson-hammond-may-live password=sten123 hosted-by=BBC
+
+# Add the videos
+http post $HUB/channel/newvideo channel-slug=monstercat channel-password=sten123 video-slug=eminence-soulero--invisible video-name="Eminence & Soulero - Invisible (feat. Mari-Anna)"
+http post $HUB/channel/newvideo channel-slug=clarkson-hammond-may-live channel-password=sten123 video-slug=loading-the-trucks video-name="Loading the trucks"
+http post $HUB/channel/newvideo channel-slug=monstercat channel-password=sten123 video-slug=stephen-walking--difference-between-aliens video-name="Stephen Walking - The Difference Between Us And The Aliens"
+http post $HUB/channel/newvideo channel-slug=clarkson-hammond-may-live channel-password=sten123 video-slug=rockin-robin video-name="Rockin' Robin"
+http post $HUB/channel/newvideo channel-slug=clarkson-hammond-may-live channel-password=sten123 video-slug=mays-piano video-name="May's Piano"
+http post $HUB/channel/newvideo channel-slug=clarkson-hammond-may-live channel-password=sten123 video-slug=london-o2-teaser video-name="London O2 Teaser"
