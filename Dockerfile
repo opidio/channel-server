@@ -1,6 +1,6 @@
 FROM crosbymichael/python
 
-RUN pip install --upgrade youtube_dl httpie node && npm install -g http-server mkdir /http
+RUN pip install --upgrade youtube_dl httpie nodejs && npm install -g http-server mkdir /http
 WORKDIR /http
 
 COPY example .
